@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true" style="background-color: #222;color: white;">
+    <!-- <div class="row"> -->
+      <!-- <div class="col-md-6">
+        <div class="user-title my-0"><h5 style="margin: 0px !important;">Enter Username:</h5></div> -->
+        <div class="row">         
+          <div class="col-sm-6">
+            <form #search="ngForm" name="search" (ngSubmit)="getuserprofile(username.value)" class="form-inline ng-untouched ng-pristine ng-valid" novalidate="">
+              <div class="form-group">
+                <div class="input-group">
+                    <label  style="margin-right: 10px; font-size: 20px;">Enter Username:</label>
+
+                  <input class="form-control ng-pristine ng-valid ng-touched" name="username" #username ngModel>
+                  <span *ngIf="loading"><img style="height:30px;" src="../../../assets/image/spinner.gif" /></span> 
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      <!-- </div> -->
+    <!-- </div> -->
+  </div>
+  <div class="section profile-content" style="background-color: black; color: #9A9A9A;">
+    <div *ngIf="profile" class="container">
+      <div class="owner">
+        <div class="avatar">
+          <img src="{{profile.person.picture}}" alt="User Profile Picture" class="img-circle img-no-padding img-responsive">
+        </div>
+        <div class="name">
+          <h4 class="title">{{profile.person.name}}<br /></h4>
+          <h6 class="description">{{profile.person.professionalHeadline}}</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto text-center">
+          <p>{{profile.person.summaryOfBio}}</p>
+          <br />
+          <h6 *ngIf="masterskills && masterskills.length>0">Master</h6>
+          <div *ngFor="let mstrength of masterskills" class="skillbuttons">
+            <button  class="btn btn-outline-default btn-round skillbuttons"><i class="fa fa-cog"></i> {{mstrength.name}}</button>
+          </div>
+          <span *ngIf="expertskills && expertskills.length>0" style="display: block;"><i class="fas fa-rabbit-fast skillbuttons" style="margin-right: 5px;"></i><h6 class="skillbuttons" *ngIf="expertskills && expertskills.length>0" >Expert</h6></span>
+          <div *ngFor="let estrength of expertskills" class="skillbuttons">
+            <button  class="btn btn-outline-default btn-round skillbuttons"><i class="fa fa-cog"></i> {{estrength.name}}</button>
+          </div>
+          <h6 *ngIf="proficientskills && proficientskills.length>0">Proficient</h6>
+          <div *ngFor="let pstrength of proficientskills" class="skillbuttons">
+            <button  class="btn btn-outline-default btn-round skillbuttons"><i class="fa fa-cog"></i> {{pstrength.name}}</button>
+          </div>
+          <h6 *ngIf="noviceskills && noviceskills.length>0">Novice</h6>
+          <div *ngFor="let nstrength of noviceskills" class="skillbuttons">
+            <button  class="btn btn-outline-default btn-round skillbuttons"><i class="fa fa-cog"></i> {{nstrength.name}}</button>
+          </div>
+          <h6 *ngIf="noexperienceinterestedskills && noexperienceinterestedskills.length>0">No Experience But Interested</h6>
+          <div *ngFor="let nestrength of noexperienceinterestedskills">
+            <button  class="btn btn-outline-default btn-round skillbuttons"><i class="fa fa-cog"></i> {{nestrength.name}}</button>
+          </div>
+          <h4>Interests</h4>
+          <div *ngFor="let interest of profile.interests" class="skillbuttons">
+            <button  class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> {{interest.name}}</button>
+          </div>
+        </div>
+      </div>
+      <br />
+  </div>
+  </div>
+</div>

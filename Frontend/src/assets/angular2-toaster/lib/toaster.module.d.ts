@@ -1,0 +1,14 @@
+import { ModuleWithProviders } from '@angular/core';
+import * as ɵngcc0 from '@angular/core';
+import * as ɵngcc1 from './toast.component';
+import * as ɵngcc2 from './toaster-container.component';
+import * as ɵngcc3 from './trust-html.pipe';
+import * as ɵngcc4 from '@angular/common';
+export declare class ToasterModule {
+    static forRoot(): ModuleWithProviders<ToasterModule>;
+    static forChild(): ModuleWithProviders<ToasterModule>;
+    static ɵmod: ɵngcc0.ɵɵNgModuleDefWithMeta<ToasterModule, [typeof ɵngcc1.ToastComponent, typeof ɵngcc2.ToasterContainerComponent, typeof ɵngcc3.TrustHtmlPipe], [typeof ɵngcc4.CommonModule], [typeof ɵngcc2.ToasterContainerComponent, typeof ɵngcc1.ToastComponent]>;
+    static ɵinj: ɵngcc0.ɵɵInjectorDef<ToasterModule>;
+}
+
+//# sourceMappingURL=toaster.module.d.ts.map
